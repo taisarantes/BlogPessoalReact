@@ -1,19 +1,25 @@
 import './Home.css';
+import { useState, useEffect } from 'react'
 
-interface minhaProps{
-    title: string
-    description: string
-}
+function Home(){
+    const [completed, setCompleted] = useState(false)
+    const [tarefa, setTarefa] = useState('')
 
-function Home(props:minhaProps){
+    useEffect(() => {
+        if(completed){
+            setTarefa('Parabéns! Você concluiu a tarefa!')
+        }
+    }, [completed])
+
     return (
-        <>
-        <h2>{props.title}</h2>
-        <p>{props.description}</p>
 
-        {/* <h1 className='titulo'>Home</h1> */}
-        {/* <img src='https://i.imgur.com/H88yIo2.png' alt='Imagem Tela Inicial' className='img'></img> */}
-        </>
+        <div>
+            <h1>Tarefa</h1>
+            <h3>{tarefa}</h3>
+            <p>Conclua a tarefa</p>
+            <button onClick={() => setCompleted(true)}>Concluir Tarefa</button>
+        </div>
+        
     );
 }
 
