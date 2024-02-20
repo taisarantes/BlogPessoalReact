@@ -1,6 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function NavBar() {
+
+function Navbar() {
+
   return (
     <>
      <div className='w-full bg-indigo-900 text-white flex justify-center py-4'>
@@ -22,4 +24,4 @@ function NavBar() {
   )
 }
 
-export default NavBar
+export default Navbar
