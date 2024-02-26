@@ -65,7 +65,7 @@ function FormularioPostagem() {
     buscarTemas();
     if (id !== undefined) {
       buscarPostagemPorId(id);
-      console.log(tema);
+      // console.log(tema);
 
     }
   }, [id]);
@@ -76,6 +76,7 @@ function FormularioPostagem() {
       tema: tema,
     });
   }, [tema]);
+  // utilizando ...postagem, podemos quebrar o objeto postagem para utilizar apenas uma propriedade, que nesse caso é tema
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setPostagem({
@@ -93,7 +94,7 @@ function FormularioPostagem() {
   async function gerarNovaPostagem(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    console.log({ postagem });
+    // console.log({ postagem });
 
     if (id != undefined) {
       try {
