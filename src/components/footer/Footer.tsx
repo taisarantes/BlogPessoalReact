@@ -1,9 +1,14 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
+import { useContext } from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
 
 function Footer() {
+  const { usuario, handleLogout } = useContext(AuthContext)
 
-  return (
-    <>
+  let footerComponent
+
+  if(usuario.token !== ""){
+    footerComponent = (
       <div className="flex justify-center bg-indigo-900 text-white">
         <div className="container flex flex-col items-center py-4">
           <p className='text-xl font-bold'>Blog pessoal Generation | Copyright: </p>
@@ -15,6 +20,12 @@ function Footer() {
           </div>
         </div>
       </div>
+    )
+  }
+
+  return (
+    <>
+      {footerComponent}
     </>
   )
 }
