@@ -30,5 +30,5 @@ function Home() {
       </>
     );
 }
-
+// ajuste url
 export default Home
